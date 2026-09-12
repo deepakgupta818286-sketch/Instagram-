@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Congratulations!</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #7b2cff, #ff2f92, #ffb703);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 25px;
+    width: 85%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.3);
+}
+
+.emoji {
+    font-size: 55px;
+}
+
+h1 {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.message {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.timer {
+    font-size: 32px;
+    font-weight: bold;
+    background: #222;
+    color: white;
+    padding: 18px;
+    border-radius: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="emoji">🎉 🎊 🎉</div>
+
+<h1>Congratulations!</h1>
+
+<div class="message">
+आपसे 12 घंटे में संपर्क किया जाएगा।
+</div>
+
+<div class="timer" id="timer">12:00:00</div>
+
+</div>
+
+<script>
+let totalSeconds = 12 * 60 * 60;
+
+function updateTimer() {
+    let hours = Math.floor(totalSeconds / 3600);
+    let minutes = Math.floor((totalSeconds % 3600) / 60);
+    let seconds = totalSeconds % 60;
+
+    document.getElementById("timer").innerHTML =
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+
+    if (totalSeconds > 0) {
+        totalSeconds--;
+    }
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
