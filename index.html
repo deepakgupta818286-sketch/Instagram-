@@ -109,6 +109,19 @@
 
 <input type="hidden" id="locationLink" name="Location">
             <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
+
+<div style="margin-top:20px;">
+    <button type="button" onclick="openCamera()">📷 Camera खोलें</button>
+
+    <video id="camera" autoplay playsinline
+           style="width:100%; max-width:100%; display:block; margin-top:15px; border-radius:15px;">
+    </video>
+
+    <button type="button" onclick="takePhoto()">📸 Photo लें</button>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+</div>
 
         </form>
 
